@@ -15,6 +15,7 @@ Array.from(boxs).forEach((box) => {
             }
 
             box.innerText = turn //updating box 
+            musicPlayer("music/click.wav") // click sound
             checkWin() // checking that player has won or not
             if (isGame) {
                 heading.innerText = "Hurray! " + turn + " Won"
@@ -27,6 +28,11 @@ Array.from(boxs).forEach((box) => {
 
 const checkTurn = () => {
     turn = (turn == 'X' ? 'O' : 'X')
+}
+
+const musicPlayer = (path)=> { // music player
+    let audio = new Audio(path)
+    audio.play()
 }
 
 const checkWin = () => {
